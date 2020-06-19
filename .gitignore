@@ -1,0 +1,7 @@
+.vscode
+data/*
+dumps/*
+figs/*
+.ipynb_checkpoints
+__pychache__
+*.pyc
