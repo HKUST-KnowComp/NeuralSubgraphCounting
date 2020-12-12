@@ -1,0 +1,8 @@
+tqdm
+numpy
+pandas
+scipy
+tensorboardX
+torch==1.4.0
+dgl==0.4.3post2
+

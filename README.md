@@ -26,7 +26,7 @@ As for the interaction module, simple pooling is obviously not enough. We design
 * scipy
 * tensorboardX
 * torch >= 1.3.0
-* dgl >= 0.4.3
+* dgl == 0.4.3post2
 
 
 ### Data Generation

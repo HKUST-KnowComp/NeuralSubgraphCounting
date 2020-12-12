@@ -5,7 +5,7 @@ import copy
 from utils import segment_data, segment_length, map_activation_str_to_layer, batch_convert_len_to_mask
 from basemodel import EdgeSeqModel
 
-_INF = 1e-12
+_INF = -1e30
 
 class PositionalEmbedding(nn.Module):
     def __init__(self, d_emb):

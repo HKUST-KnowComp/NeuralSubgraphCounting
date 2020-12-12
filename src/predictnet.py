@@ -5,7 +5,7 @@ import torch.nn.functional as F
 import math
 from utils import map_activation_str_to_layer, batch_convert_len_to_mask, mask_seq_by_len, extend_dimensions, gather_indices_by_lens
 
-_INF = 1e-12
+_INF = -1e30
 
 def get_multi_head_attn_vec(head_q, head_k, head_v, attn_mask=None, act_layer=None, dropatt=None):
     bsz, qlen, num_heads, head_dim = head_q.size()

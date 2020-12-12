@@ -9,7 +9,6 @@ from dgl.nn.pytorch.conv import RelGraphConv
 from basemodel import GraphAdjModel
 from utils import map_activation_str_to_layer, split_and_batchify_graph_feats
 
-_INF = -1e12
 
 class RGCN(GraphAdjModel):
     def __init__(self, config):

@@ -7,7 +7,6 @@ from utils import segment_length
 from basemodel import EdgeSeqModel
 from utils import map_activation_str_to_layer, batch_convert_len_to_mask
 
-_INF = -1e12
 
 class RNNLayer(nn.Module):
     def __init__(self, input_dim, hidden_dim, rnn_type, bidirectional, dropout):
