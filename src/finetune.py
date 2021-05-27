@@ -218,7 +218,7 @@ if __name__ == "__main__":
                 sampler = Sampler(dataset, group_by=["graph", "pattern"], batch_size=finetune_config["batch_size"], shuffle=data_type=="train", drop_last=False)
                 data_loader = DataLoader(dataset,
                     batch_sampler=sampler,
-                    collate_fn=partial(GraphAdjDataset.batchify, return_weights=finetune_config["return_weights"]),
+                    collate_fn=GraphAdjDataset.batchify,
                     pin_memory=data_type=="train")
             else:
                 dataset = EdgeSeqDataset(list())
@@ -226,7 +226,7 @@ if __name__ == "__main__":
                 sampler = Sampler(dataset, group_by=["graph", "pattern"], batch_size=finetune_config["batch_size"], shuffle=data_type=="train", drop_last=False)
                 data_loader = DataLoader(dataset,
                     batch_sampler=sampler,
-                    collate_fn=partial(EdgeSeqDataset.batchify, return_weights=finetune_config["return_weights"]),
+                    collate_fn=EdgeSeqDataset.batchify,
                     pin_memory=data_type=="train")
             data_loaders[data_type] = data_loader
             logger.info("data (data_type: {:<5s}, len: {}) generated".format(data_type, len(dataset.data)))
@@ -245,7 +245,7 @@ if __name__ == "__main__":
                 sampler = Sampler(dataset, group_by=["graph", "pattern"], batch_size=finetune_config["batch_size"], shuffle=data_type=="train", drop_last=False)
                 data_loader = DataLoader(dataset,
                     batch_sampler=sampler,
-                    collate_fn=partial(GraphAdjDataset.batchify, return_weights=finetune_config["return_weights"]),
+                    collate_fn=GraphAdjDataset.batchify,
                     pin_memory=data_type=="train")
             else:
                 if os.path.exists(os.path.join(finetune_config["save_data_dir"], "%s_edgeseq_dataset.pt" % (data_type))):
@@ -257,7 +257,7 @@ if __name__ == "__main__":
                 sampler = Sampler(dataset, group_by=["graph", "pattern"], batch_size=finetune_config["batch_size"], shuffle=data_type=="train", drop_last=False)
                 data_loader = DataLoader(dataset,
                     batch_sampler=sampler,
-                    collate_fn=partial(EdgeSeqDataset.batchify, return_weights=finetune_config["return_weights"]),
+                    collate_fn=EdgeSeqDataset.batchify,
                     pin_memory=data_type=="train")
             data_loaders[data_type] = data_loader
             logger.info("data (data_type: {:<5s}, len: {}) generated".format(data_type, len(dataset.data)))
