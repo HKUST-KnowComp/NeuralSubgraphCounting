@@ -25,6 +25,7 @@ As for the interaction module, simple pooling is obviously not enough. We design
 * pandas
 * scipy
 * tensorboardX
+* python-igraph == 0.9.11
 * torch >= 1.3.0
 * dgl == 0.4.3post2
 
